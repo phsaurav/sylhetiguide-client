@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo_title.png';
 import useAuth from '../../hooks/useAuth';
 import { Transition } from '@headlessui/react';
+import { FaUserCircle } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
@@ -55,20 +56,34 @@ const Header = () => {
 										About us
 									</NavLink>
 									{user.displayName ? (
-										<div className="flex items-center">
-											<p className="font-semibold text-bluegray-400 link link-underline link-underline-red">
-												{user.displayName.length > 8
-													? user.displayName.split(
-															' '
-													  )[0]
-													: user.displayName}
-											</p>
+										<div className="flex flex-col justify-between h-20">
 											<button
 												onClick={logOut}
-												className="rounded-full text-bluegray-400 px-5 py-2 ml-10  transition duration-300 ease-in-outmr-8 bg-brand-1"
+												className="font-semibold text-white px-5 pb-2 pt-1 transition duration-300 ease-in-out text-center bg-brand-4 hover:bg-brand-5"
 											>
-												Sign Out
+												Log Out
 											</button>
+											<div className="flex w-36 items-center justify-center h-8 mr-1">
+												<div className="w-6 h-6 m-1 text-xl border-bra">
+													{user.photoURL ? (
+														<img
+															className="rounded-full"
+															src={user.photoURL}
+															alt=""
+														/>
+													) : (
+														<FaUserCircle className="text-brand-2 text-xl h-6 w-6" />
+													)}
+												</div>
+												<p className="font-semibold text-brand-2  py-1 transition duration-300 ease-in-out text-left pl-1">
+													{user.displayName.length >
+													10
+														? user.displayName.split(
+																' '
+														  )[0]
+														: user.displayName}
+												</p>
+											</div>
 										</div>
 									) : (
 										<div className="flex flex-col justify-end h-20">
@@ -149,7 +164,7 @@ const Header = () => {
 						<div className="md:hidden " id="mobile-menu">
 							<div
 								ref={ref}
-								className=" pt-2 pb-3 space-y-2  text-center mx-auto bg-brand-2"
+								className=" pt-2 space-y-2  text-center mx-auto bg-brand-2"
 							>
 								<NavLink
 									to="/home"
@@ -171,15 +186,28 @@ const Header = () => {
 								</NavLink>
 								{user.displayName ? (
 									<div className="flex items-center flex-col">
-										<p className="font-semibold text-white hover:bg-brand-1 block px-3 py-2 rounded-md text-base w-full">
-											{user.displayName}
-										</p>
 										<button
 											onClick={logOut}
-											className="font-semibold text-white hover:bg-brand-1 block px-3 py-2 rounded-md text-base w-full"
+											className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
 										>
-											Sign Out
+											Log Out
 										</button>
+										<div className="flex items-center justify-center h-8 mr-1 py-6 bg-brand-2 w-full">
+											<div className="w-6 h-6 m-1 text-xl border-bra">
+												{user.photoURL ? (
+													<img
+														className="rounded-full"
+														src={user.photoURL}
+														alt=""
+													/>
+												) : (
+													<FaUserCircle className="text-brand-2 text-xl h-6 w-6" />
+												)}
+											</div>
+											<p className="font-semibold text-white  py-1 transition duration-300 ease-in-out text-left pl-1 text-lg uppercase">
+												{user.displayName}
+											</p>
+										</div>
 									</div>
 								) : (
 									<div className="flex items-center flex-col">

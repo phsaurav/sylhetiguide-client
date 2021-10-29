@@ -34,6 +34,8 @@ module.exports = {
 				3: '#25B04B',
 				4: '#FF7F54',
 				5: '#FB5C19',
+				6: '#333333',
+				7: '#DAF0DB',
 			},
 		},
 		fontFamily: {},

@@ -34,7 +34,7 @@ const Hero = () => {
 	return (
 		<div className="relative">
 			<Slider
-				autoplay="1000"
+				autoplay="10000"
 				infinite="true"
 				classNames="buttonDisabled previousButton disabled "
 				className="slider-wrapper"

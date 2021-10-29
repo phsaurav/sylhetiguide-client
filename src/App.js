@@ -35,8 +35,8 @@ function App() {
 								</Route>
 							</Switch>
 						</div>
+						<Footer></Footer>
 					</div>
-					<Footer></Footer>
 				</Router>
 			</AuthProvider>
 		</div>

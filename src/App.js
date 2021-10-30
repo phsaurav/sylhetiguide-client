@@ -15,10 +15,12 @@ import MyTours from './containers/MyTours/MyTours';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AllTours from './containers/AllTours/AllTours';
 import Update from './containers/Update/Update';
+import AddPackage from './containers/AddPackage/AddPackage';
+import About from './containers/About/About';
 
 function App() {
 	return (
-		<div>
+		<div className="bg-brand-7">
 			<AuthProvider>
 				<Router>
 					<div className="flex flex-col justify-between h-screen">
@@ -34,6 +36,12 @@ function App() {
 								<Route path="/login">
 									<Login></Login>
 								</Route>
+								<Route path="/about">
+									<About></About>
+								</Route>
+								<PrivateRoute path="/addpackage">
+									<AddPackage></AddPackage>
+								</PrivateRoute>
 								<PrivateRoute path="/alltours">
 									<AllTours></AllTours>
 								</PrivateRoute>

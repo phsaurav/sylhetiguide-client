@@ -8,7 +8,7 @@ const MyTours = () => {
 	const [enrollments] = useMyTours(user.email);
 	return (
 		<div>
-			<div className="bg-brand-7 min-h-screen ">
+			<div className="">
 				{enrollments.length ? (
 					enrollments.map((enrollment) => (
 						<TourCard

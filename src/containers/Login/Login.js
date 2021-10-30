@@ -24,7 +24,7 @@ const Login = () => {
 			.finally(() => setIsLoading(false));
 	};
 	return (
-		<div className="">
+		<div className="bg-white" style={{ height: '89vh' }}>
 			<div
 				className="flex flex-col justify-center items-center"
 				style={{ height: '50vh' }}

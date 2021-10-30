@@ -10,7 +10,7 @@ const Header = () => {
 	const { user, logOut } = useAuth();
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<div>
+		<div className="bg-white">
 			<nav className="relative z-20">
 				<div className="container mx-auto">
 					<div className="text-black">
@@ -24,10 +24,10 @@ const Header = () => {
 							</NavLink>
 							<div>
 								{/* <!-- Header Icons --> */}
-								<div className="hidden md:flex items-end uppercase ">
+								<div className="hidden md:flex items-end uppercase text-sm lg:text-base">
 									<NavLink
 										to="/home"
-										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
+										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-4 lg:px-6 py-1"
 										activeStyle={{
 											backgroundColor: '#7DC242',
 											color: 'white',
@@ -37,7 +37,7 @@ const Header = () => {
 									</NavLink>
 									<NavLink
 										to="/about"
-										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
+										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 										activeStyle={{
 											backgroundColor: '#7DC242',
 											color: 'white',
@@ -47,7 +47,7 @@ const Header = () => {
 									</NavLink>
 									<NavLink
 										to="/alltours"
-										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
+										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 										activeStyle={{
 											backgroundColor: '#7DC242',
 											color: 'white',
@@ -60,13 +60,23 @@ const Header = () => {
 										<div className="flex items-end">
 											<NavLink
 												to="/mytours"
-												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
+												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 												activeStyle={{
 													backgroundColor: '#7DC242',
 													color: 'white',
 												}}
 											>
 												My Tours
+											</NavLink>
+											<NavLink
+												to="/addpackage"
+												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
+												activeStyle={{
+													backgroundColor: '#7DC242',
+													color: 'white',
+												}}
+											>
+												Add Package
 											</NavLink>
 											<div className="flex flex-col justify-between h-20">
 												<button
@@ -188,16 +198,28 @@ const Header = () => {
 									Home
 								</NavLink>
 								<NavLink
-									to="/blogs"
-									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
-								>
-									Blogs
-								</NavLink>
-								<NavLink
 									to="/about"
 									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
 								>
-									About
+									About Us
+								</NavLink>
+								<NavLink
+									to="/addpackage"
+									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
+								>
+									Add Package
+								</NavLink>
+								<NavLink
+									to="/alltours"
+									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
+								>
+									All Tours
+								</NavLink>
+								<NavLink
+									to="/mytours"
+									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
+								>
+									My Tours
 								</NavLink>
 								{user.displayName ? (
 									<div className="flex items-center flex-col">

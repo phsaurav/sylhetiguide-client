@@ -6,7 +6,7 @@ const AllTours = () => {
 	const [enrollments] = useAllTours();
 	return (
 		<div>
-			<div className="bg-brand-7 min-h-screen ">
+			<div className="">
 				{enrollments.length ? (
 					enrollments.map((enrollment) => (
 						<AllTourCard

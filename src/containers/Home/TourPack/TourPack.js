@@ -125,7 +125,7 @@ const TourPack = () => {
 							placeholder="Email"
 							className="text-sm w-80 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg mb-3"
 							style={{ outline: 'none' }}
-							defaultValue={user.email}
+							value={user.email}
 							{...register('email')}
 						/>
 						<input

@@ -47,8 +47,11 @@ const Home = () => {
 						</div>
 					</div>
 					<div className="bg-brand-7 pb-40">
-						<div className="flex flex-col items-center" id="tour">
-							<h1 className="text-white bg-brand-3 mt-20 w-60 text-center py-2 text-xl">
+						<div className="flex flex-col items-center">
+							<h1
+								className="text-white bg-brand-3 mt-20 w-60 text-center py-2 text-xl"
+								id="tour"
+							>
 								Sylheti Tour Packages
 							</h1>
 						</div>

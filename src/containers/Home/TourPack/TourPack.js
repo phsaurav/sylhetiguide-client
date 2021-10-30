@@ -7,12 +7,34 @@ import { GiMoneyStack } from 'react-icons/gi';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
 import usePackage from '../../../hooks/usePackage';
+import useAuth from '../../../hooks/useAuth';
 import './TourPack.css';
+import { useForm } from 'react-hook-form';
 
 const TourPack = () => {
 	const { id } = useParams();
 	const [pack] = usePackage(id);
+	const { user } = useAuth();
+	const { handleSubmit, register, reset } = useForm();
 	const { img, title, heading, description, location, days, price } = pack;
+
+	const onSubmit = (data) => {
+		data.packageId = id;
+		data.img = user?.photoURL;
+		fetch('https://sylhetiguide.herokuapp.com/enrollments', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		})
+			.then((res) => res.json())
+			.then((result) => {
+				if (result.insertedId) {
+					reset();
+				}
+			});
+	};
 	return (
 		<div>
 			<div className="bg-brand-2 h-full text-white">
@@ -70,13 +92,59 @@ const TourPack = () => {
 						</HashLink>
 					</div>
 				</div>
-				<div className="bg-brand-7 pb-40">
+				<div className="bg-brand-7 pb-20">
 					<div className="flex flex-col items-center" id="enroll">
 						<h1 className="text-white bg-brand-3 mt-20 w-60 text-center py-2 text-xl">
 							Enroll Now
 						</h1>
 					</div>
-					<div className="bg-brand-3 h-1  mb-16"></div>
+					<div className="bg-brand-3 h-1  mb-10"></div>
+					<form
+						className="mt-4 flex flex-col items-center text-brand-1"
+						onSubmit={handleSubmit(onSubmit)}
+					>
+						<input
+							required
+							type="text"
+							placeholder="Name"
+							className="text-sm w-80 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg mb-3"
+							style={{ outline: 'none' }}
+							value={user.displayName}
+							{...register('name')}
+						/>
+						<input
+							required
+							type="text"
+							placeholder="Email"
+							className="text-sm w-80 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg mb-3"
+							style={{ outline: 'none' }}
+							value={user.email}
+							{...register('email')}
+						/>
+						<input
+							required
+							type="text"
+							placeholder="Address"
+							className="text-sm w-80 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg mb-3"
+							style={{ outline: 'none' }}
+							{...register('address')}
+						/>
+						<input
+							required
+							type="tel"
+							placeholder="Phone Number"
+							className="text-sm w-80 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg mb-3"
+							style={{ outline: 'none' }}
+							{...register('number')}
+						/>
+						<button
+							type="submit"
+							className="text-white py-2 px-7 w-80 rounded-md bg-brand-3 hover:bg-brand-2"
+						>
+							Enroll
+						</button>
+						<br />
+					</form>
 				</div>
 			</div>
 		</div>

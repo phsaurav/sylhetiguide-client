@@ -7,7 +7,6 @@ const usePackages = () => {
 		fetch('https://sylhetiguide.herokuapp.com/packages')
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				setPackages(data);
 			});
 	}, []);

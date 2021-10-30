@@ -39,7 +39,7 @@ const Card = ({ pack }) => {
 				<Link to={`/home/${_id}`}>
 					<div className="flex justify-center">
 						<button className="bg-brand-2 hover:bg-brand- w-full text-white py-2 flex justify-center items-center">
-							<span>Check Details</span>
+							<span>Enroll Now</span>
 						</button>
 					</div>
 				</Link>

@@ -3,10 +3,10 @@ import { CgClose } from 'react-icons/cg';
 import { MdOutlineModeEditOutline } from 'react-icons/md';
 import { BiTime } from 'react-icons/bi';
 import { GiMoneyStack } from 'react-icons/gi';
-import usePackage from '../../hooks/usePackage';
 import { Link } from 'react-router-dom';
+import usePackage from '../../../hooks/usePackage';
 
-const TourCard = ({ enrollment}) => {
+const AllTourCard = ({ enrollment }) => {
 	const { _id, name, email, number, img, packageId } = enrollment;
 	const [pack] = usePackage(packageId);
 	const handleDelete = () => {
@@ -20,6 +20,21 @@ const TourCard = ({ enrollment}) => {
 					window.location.reload();
 				});
 		}
+	};
+	const handleStatus = () => {
+		fetch(`https://sylhetiguide.herokuapp.com/status/${_id}`, {
+			method: 'PUT',
+			headers: {
+				'content-type': 'application/json',
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.modifiedCount > 0) {
+					alert('Status Updated!!');
+				}
+				window.location.reload();
+			});
 	};
 	return (
 		<div>
@@ -62,7 +77,18 @@ const TourCard = ({ enrollment}) => {
 							</div>
 						</div>
 						<div className="my-5 flex justify-center ml-3">
-
+							{enrollment.status === 'pending' ? (
+								<button
+									className=" border-brand-4  hover:bg-brand-4 border-2 rounded-lg mr-5 p-1 text-brand-4 hover:text-white uppercase"
+									onClick={handleStatus}
+								>
+									{enrollment.status}
+								</button>
+							) : (
+								<button className=" border-brand-3  hover:bg-brand-3 border-2 rounded-lg mr-5 p-1 text-brand-3 hover:text-white uppercase">
+									{enrollment.status}
+								</button>
+							)}
 							<Link to={`/update/${_id}`}>
 								<button className=" border-brand-2  hover:bg-brand-2 border-2 rounded-lg mr-5 p-1 text-brand-2 hover:text-white">
 									<MdOutlineModeEditOutline className=" text-2xl" />
@@ -82,4 +108,4 @@ const TourCard = ({ enrollment}) => {
 	);
 };
 
-export default TourCard;
+export default AllTourCard;

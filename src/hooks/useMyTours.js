@@ -13,7 +13,6 @@ const useMyTours = (email) => {
 		})
 			.then((res) => res.json())
 			.then((enrollments) => {
-				console.log(enrollments);
 				setEnrollments(enrollments);
 			});
 	}, [email]);

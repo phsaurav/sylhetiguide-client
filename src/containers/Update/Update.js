@@ -24,7 +24,7 @@ const Update = () => {
 				if (data.modifiedCount > 0) {
 					alert('Updated successfully!!');
 				}
-				history.push('/mytours');
+				history.goBack();
 			});
 	};
 	return (

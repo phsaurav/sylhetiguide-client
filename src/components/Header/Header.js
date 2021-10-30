@@ -36,16 +36,6 @@ const Header = () => {
 										Home
 									</NavLink>
 									<NavLink
-										to="/blogs"
-										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
-										activeStyle={{
-											backgroundColor: '#7DC242',
-											color: 'white',
-										}}
-									>
-										blogs
-									</NavLink>
-									<NavLink
 										to="/about"
 										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
 										activeStyle={{
@@ -55,34 +45,59 @@ const Header = () => {
 									>
 										About us
 									</NavLink>
+									<NavLink
+										to="/alltours"
+										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
+										activeStyle={{
+											backgroundColor: '#7DC242',
+											color: 'white',
+										}}
+									>
+										All Tours
+									</NavLink>
+
 									{user.displayName ? (
-										<div className="flex flex-col justify-between h-20">
-											<button
-												onClick={logOut}
-												className="font-semibold text-white px-5 pb-2 pt-1 transition duration-300 ease-in-out text-center bg-brand-4 hover:bg-brand-5"
+										<div className="flex items-end">
+											<NavLink
+												to="/mytours"
+												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-6 py-1"
+												activeStyle={{
+													backgroundColor: '#7DC242',
+													color: 'white',
+												}}
 											>
-												Log Out
-											</button>
-											<div className="flex w-36 items-center justify-center h-8 mr-1">
-												<div className="w-6 h-6 m-1 text-xl border-bra">
-													{user.photoURL ? (
-														<img
-															className="rounded-full"
-															src={user.photoURL}
-															alt=""
-														/>
-													) : (
-														<FaUserCircle className="text-brand-2 text-xl h-6 w-6" />
-													)}
+												My Tours
+											</NavLink>
+											<div className="flex flex-col justify-between h-20">
+												<button
+													onClick={logOut}
+													className="font-semibold text-white px-5 pb-2 pt-1 transition duration-300 ease-in-out text-center bg-brand-4 hover:bg-brand-5"
+												>
+													Log Out
+												</button>
+												<div className="flex w-36 items-center justify-center h-8 mr-1">
+													<div className="w-6 h-6 m-1 text-xl border-bra">
+														{user.photoURL ? (
+															<img
+																className="rounded-full"
+																src={
+																	user.photoURL
+																}
+																alt=""
+															/>
+														) : (
+															<FaUserCircle className="text-brand-2 text-xl h-6 w-6" />
+														)}
+													</div>
+													<p className="font-semibold text-brand-2  py-1 transition duration-300 ease-in-out text-left pl-1">
+														{user.displayName
+															.length > 10
+															? user.displayName.split(
+																	' '
+															  )[0]
+															: user.displayName}
+													</p>
 												</div>
-												<p className="font-semibold text-brand-2  py-1 transition duration-300 ease-in-out text-left pl-1">
-													{user.displayName.length >
-													10
-														? user.displayName.split(
-																' '
-														  )[0]
-														: user.displayName}
-												</p>
 											</div>
 										</div>
 									) : (

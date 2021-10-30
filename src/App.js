@@ -11,6 +11,9 @@ import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import NotFound from './containers/NotFound/NotFound';
 import AuthProvider from './context/AuthProvider';
+import MyTours from './containers/MyTours/MyTours';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AllTours from './containers/AllTours/AllTours';
 
 function App() {
 	return (
@@ -30,6 +33,12 @@ function App() {
 								<Route path="/login">
 									<Login></Login>
 								</Route>
+								<PrivateRoute path="/alltours">
+									<AllTours></AllTours>
+								</PrivateRoute>
+								<PrivateRoute path="/mytours">
+									<MyTours></MyTours>
+								</PrivateRoute>
 								<Route>
 									<NotFound></NotFound>
 								</Route>

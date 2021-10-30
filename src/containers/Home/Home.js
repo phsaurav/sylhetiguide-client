@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from '../../components/Hero/Hero';
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { BsChevronCompactDown } from 'react-icons/bs';
 import Cards from './Cards/Cards';
@@ -32,13 +32,17 @@ const Home = () => {
 								can imagine.
 							</p>
 							<div className="flex flex-col items-start">
-								<HashLink
-									to="home#tour"
-									className="mt-3 mb-12 bg-white text-brand-2 hover:text-brand-3 hover:bg-brand-7 px-6 pt-1 font-semibold flex flex-col text-lg items-center"
-								>
-									Tour to Sylhet
-									<BsChevronCompactDown className="text-3xl font-extrabold "></BsChevronCompactDown>
-								</HashLink>
+								<div>
+									<HashLink
+										to="home#tour"
+										className="mt-3 bg-white text-brand-2 hover:text-brand-3 hover:bg-brand-7 px-6 py-1 font-semibold flex flex-col text-lg items-center"
+									>
+										Tour to Sylhet
+									</HashLink>
+									<div className="text-center flex justify-center">
+										<BsChevronCompactDown className="text-3xl font-extrabold mb-10 -mt-1"></BsChevronCompactDown>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -9,14 +9,14 @@ const TourCard = ({ enrollment }) => {
 	const { _id, name, email, number, img, packageId } = enrollment;
 	const [pack] = usePackage(packageId);
 	const handleDelete = () => {
-		if (confirm('Are you Sure?')) {
+		if (window.confirm('Are you Sure?')) {
 			fetch(`http://localhost:5000/enrollments/${_id}`, {
 				method: 'DELETE',
 			})
 				.then((res) => res.text()) // or res.json()
 				.then((res) => {
 					alert('Enrollment Deletion Complete');
-					location.reload();
+					window.location.reload();
 				});
 		}
 	};

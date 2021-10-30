@@ -2,9 +2,10 @@ import React from 'react';
 import { BiTime } from 'react-icons/bi';
 import { GiMoneyStack } from 'react-icons/gi';
 import { GrMapLocation } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
 
 const Card = ({ pack }) => {
-	const { img, days, price, title, location } = pack;
+	const { _id, img, days, price, title, location } = pack;
 	return (
 		<div>
 			<div className="bg-white w-96  h-auto  shadow-md flex flex-col gap-2 m-5 lg:m-10">
@@ -35,11 +36,13 @@ const Card = ({ pack }) => {
 						<GrMapLocation className="mr-1" /> {location}
 					</p>
 				</div>
-				<div className="flex justify-center">
-					<button className="bg-brand-3 hover:bg-brand-2 w-full text-white py-2 flex justify-center items-center">
-						<span>Check Details</span>
-					</button>
-				</div>
+				<Link to={`/home/${_id}`}>
+					<div className="flex justify-center">
+						<button className="bg-brand-2 hover:bg-brand- w-full text-white py-2 flex justify-center items-center">
+							<span>Check Details</span>
+						</button>
+					</div>
+				</Link>
 			</div>
 		</div>
 	);

@@ -7,7 +7,7 @@ const Cards = () => {
 	const [packages] = usePackages();
 	return (
 		<div className="flex flex-wrap lg:container mx-auto justify-center">
-			{packages ? (
+			{packages.length ? (
 				packages.map((pack) => <Card key={pack._id} pack={pack}></Card>)
 			) : (
 				<div className="w-full h-full fixed block top-0 left-0 bg-white  z-50">

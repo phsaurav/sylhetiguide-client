@@ -109,7 +109,7 @@ const TourPack = () => {
 							placeholder="Name"
 							className="text-sm w-80 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg mb-3"
 							style={{ outline: 'none' }}
-							value={user.displayName}
+							defaultValue={user.displayName}
 							{...register('name')}
 						/>
 						<input
@@ -118,7 +118,7 @@ const TourPack = () => {
 							placeholder="Email"
 							className="text-sm w-80 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg mb-3"
 							style={{ outline: 'none' }}
-							value={user.email}
+							defaultValue={user.email}
 							{...register('email')}
 						/>
 						<input

@@ -4,6 +4,7 @@ import { MdOutlineModeEditOutline } from 'react-icons/md';
 import { BiTime } from 'react-icons/bi';
 import { GiMoneyStack } from 'react-icons/gi';
 import usePackage from '../../hooks/usePackage';
+import { Link } from 'react-router-dom';
 
 const TourCard = ({ enrollment }) => {
 	const { _id, name, email, number, img, packageId } = enrollment;
@@ -61,9 +62,11 @@ const TourCard = ({ enrollment }) => {
 							</div>
 						</div>
 						<div className="my-5 flex justify-center ml-3">
-							<button className=" border-brand-2  hover:bg-brand-2 border-2 rounded-lg mr-5 p-1 text-brand-2 hover:text-white">
-								<MdOutlineModeEditOutline className=" text-2xl" />
-							</button>
+							<Link to={`/update/${_id}`}>
+								<button className=" border-brand-2  hover:bg-brand-2 border-2 rounded-lg mr-5 p-1 text-brand-2 hover:text-white">
+									<MdOutlineModeEditOutline className=" text-2xl" />
+								</button>
+							</Link>
 							<button
 								className=" border-brand-5 hover:bg-brand-5 text-brand-5 hover:text-white border-2 rounded-lg mr-5 p-1"
 								onClick={handleDelete}

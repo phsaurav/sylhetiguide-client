@@ -14,6 +14,7 @@ import AuthProvider from './context/AuthProvider';
 import MyTours from './containers/MyTours/MyTours';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AllTours from './containers/AllTours/AllTours';
+import Update from './containers/Update/Update';
 
 function App() {
 	return (
@@ -38,6 +39,9 @@ function App() {
 								</PrivateRoute>
 								<PrivateRoute path="/mytours">
 									<MyTours></MyTours>
+								</PrivateRoute>
+								<PrivateRoute path="/update/:id">
+									<Update></Update>
 								</PrivateRoute>
 								<Route>
 									<NotFound></NotFound>

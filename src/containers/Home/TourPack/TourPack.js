@@ -10,17 +10,20 @@ import usePackage from '../../../hooks/usePackage';
 import useAuth from '../../../hooks/useAuth';
 import './TourPack.css';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 const TourPack = () => {
 	const { id } = useParams();
 	const [pack] = usePackage(id);
 	const { user } = useAuth();
+	const history = useHistory();
 	const { handleSubmit, register, reset } = useForm();
 	const { img, title, heading, description, location, days, price } = pack;
 
 	const onSubmit = (data) => {
 		data.packageId = id;
 		data.img = user?.photoURL;
+		data.status = 'pending';
 		fetch('https://sylhetiguide.herokuapp.com/enrollments', {
 			method: 'POST',
 			headers: {
@@ -31,7 +34,11 @@ const TourPack = () => {
 			.then((res) => res.json())
 			.then((result) => {
 				if (result.insertedId) {
+					alert(
+						'Thank you!! \nYou are enrolled we will contact with you to fix a date for your tour.'
+					);
 					reset();
+					history.push('/home');
 				}
 			});
 	};

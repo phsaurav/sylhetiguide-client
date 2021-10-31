@@ -9,7 +9,7 @@ const About = () => {
 			<div className="bg-brand-2 flex flex-col items-center py-5">
 				<img src={icon} className="pt-10 pb-5" alt="" />
 				<h1
-					className="text-white  px-6  text-centerb pb-2 pt-1 rounded-full mb-8 text-2xl md:text-4xl font-bold border-2 border-white"
+					className="text-white  px-6  text-centerb pb-2 pt-1 rounded-full mb-8 text-2xl md:text-4xl font-bold border-2 border-white text-center"
 					id="tour"
 				>
 					Why Chooose Sylheti Tour Guide?

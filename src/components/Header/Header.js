@@ -29,7 +29,7 @@ const Header = () => {
 										to="/home"
 										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-4 lg:px-6 py-1"
 										activeStyle={{
-											backgroundColor: '#7DC242',
+											backgroundColor: '#137257',
 											color: 'white',
 										}}
 									>
@@ -39,7 +39,7 @@ const Header = () => {
 										to="/about"
 										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 										activeStyle={{
-											backgroundColor: '#7DC242',
+											backgroundColor: '#137257',
 											color: 'white',
 										}}
 									>
@@ -52,7 +52,7 @@ const Header = () => {
 												to="/addpackage"
 												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 												activeStyle={{
-													backgroundColor: '#7DC242',
+													backgroundColor: '#137257',
 													color: 'white',
 												}}
 											>
@@ -62,7 +62,7 @@ const Header = () => {
 												to="/alltours"
 												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 												activeStyle={{
-													backgroundColor: '#7DC242',
+													backgroundColor: '#137257',
 													color: 'white',
 												}}
 											>
@@ -72,7 +72,7 @@ const Header = () => {
 												to="/mytours"
 												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 												activeStyle={{
-													backgroundColor: '#7DC242',
+													backgroundColor: '#137257',
 													color: 'white',
 												}}
 											>
@@ -120,7 +120,7 @@ const Header = () => {
 												to="/login"
 												className="font-semibold text-bluegray-400 px-5 py-1 transition duration-300 ease-in-out "
 												activeStyle={{
-													backgroundColor: '#7DC242',
+													backgroundColor: '#137257',
 													color: 'white',
 												}}
 											>

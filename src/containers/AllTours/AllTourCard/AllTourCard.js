@@ -85,12 +85,12 @@ const AllTourCard = ({ enrollment }) => {
 									{enrollment.status}
 								</button>
 							) : (
-								<button className=" border-brand-3  hover:bg-brand-3 border-2 rounded-lg mr-5 p-1 text-brand-3 hover:text-white uppercase">
+								<button className=" border-brand-8  hover:bg-brand-8 border-2 rounded-lg mr-5 p-1 text-brand-8 hover:text-white uppercase">
 									{enrollment.status}
 								</button>
 							)}
 							<Link to={`/update/${_id}`}>
-								<button className=" border-brand-2  hover:bg-brand-2 border-2 rounded-lg mr-5 p-1 text-brand-2 hover:text-white">
+								<button className=" border-brand-9  hover:bg-brand-9 border-2 rounded-lg mr-5 p-1 text-brand-9 hover:text-white">
 									<MdOutlineModeEditOutline className=" text-2xl" />
 								</button>
 							</Link>

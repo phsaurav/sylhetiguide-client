@@ -90,7 +90,7 @@ const AddPackage = () => {
 					/>
 					<button
 						type="submit"
-						className="text-white py-2 px-7 w-96 rounded-md bg-brand-3 hover:bg-brand-2"
+						className="text-white py-2 px-7 w-96 rounded-md bg-brand-3 transition duration-500 hover:bg-brand-9"
 					>
 						Add
 					</button>

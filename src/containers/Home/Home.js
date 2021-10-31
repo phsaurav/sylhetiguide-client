@@ -14,8 +14,8 @@ const Home = () => {
 			<Hero></Hero>
 			<Switch>
 				<Route path="/home" exact>
-					<div className="bg-brand-2 h-full text-white">
-						<div className="container mx-auto">
+					<div className="bg-brand-2 h-full text-white px-2 ">
+						<div className="container mx-auto flex flex-col items-center text-center md:items-start md:text-left">
 							<h1 className=" text-5xl md:text-7xl font-bold pt-10 text-left">
 								Welcome to Sylhet!
 							</h1>

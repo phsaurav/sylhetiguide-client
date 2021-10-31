@@ -45,29 +45,29 @@ const Header = () => {
 									>
 										About us
 									</NavLink>
-									<NavLink
-										to="/addpackage"
-										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
-										activeStyle={{
-											backgroundColor: '#7DC242',
-											color: 'white',
-										}}
-									>
-										Add Package
-									</NavLink>
-									<NavLink
-										to="/alltours"
-										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
-										activeStyle={{
-											backgroundColor: '#7DC242',
-											color: 'white',
-										}}
-									>
-										All Tours
-									</NavLink>
 
 									{user.displayName ? (
 										<div className="flex items-end">
+											<NavLink
+												to="/addpackage"
+												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
+												activeStyle={{
+													backgroundColor: '#7DC242',
+													color: 'white',
+												}}
+											>
+												Add Package
+											</NavLink>
+											<NavLink
+												to="/alltours"
+												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
+												activeStyle={{
+													backgroundColor: '#7DC242',
+													color: 'white',
+												}}
+											>
+												All Tours
+											</NavLink>
 											<NavLink
 												to="/mytours"
 												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
@@ -206,21 +206,21 @@ const Header = () => {
 								>
 									About Us
 								</NavLink>
-								<NavLink
-									to="/addpackage"
-									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
-								>
-									Add Package
-								</NavLink>
-								<NavLink
-									to="/alltours"
-									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
-								>
-									All Tours
-								</NavLink>
 
 								{user.displayName ? (
 									<div className="flex items-center flex-col">
+										<NavLink
+											to="/addpackage"
+											className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
+										>
+											Add Package
+										</NavLink>
+										<NavLink
+											to="/alltours"
+											className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
+										>
+											All Tours
+										</NavLink>
 										<NavLink
 											to="/mytours"
 											className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"

@@ -63,7 +63,7 @@ const TourCard = ({ enrollment }) => {
 						</div>
 						<div className="my-5 flex justify-center ml-3">
 							<Link to={`/update/${_id}`}>
-								<button className=" border-brand-9  hover:bg-brand-9 border-2 rounded-lg mr-5 p-1 text-brand-9 hover:text-white">
+								<button className=" border-brand-2  hover:bg-brand-2 border-2 rounded-lg mr-5 p-1 text-brand-2 hover:text-white">
 									<MdOutlineModeEditOutline className=" text-2xl" />
 								</button>
 							</Link>

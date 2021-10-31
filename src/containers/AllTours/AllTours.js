@@ -6,7 +6,7 @@ const AllTours = () => {
 	const [enrollments] = useAllTours();
 	return (
 		<div>
-			<div className="">
+			<div className="pb-16">
 				{enrollments.length ? (
 					enrollments.map((enrollment) => (
 						<AllTourCard

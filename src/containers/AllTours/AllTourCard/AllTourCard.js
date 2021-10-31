@@ -39,7 +39,7 @@ const AllTourCard = ({ enrollment }) => {
 	return (
 		<div>
 			<div className="container mx-auto pt-5">
-				<div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto">
+				<div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto transition duration-500 ease-in-out transform hover:shadow-2xl">
 					<div className="flex flex-col  md:flex-row justify-between items-center w-full lg:px-10">
 						<div className="flex gap-2 flex-col md:flex-row  items-center px-4 py-6">
 							<img

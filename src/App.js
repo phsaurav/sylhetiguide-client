@@ -23,7 +23,7 @@ function App() {
 		<div className="bg-brand-7">
 			<AuthProvider>
 				<Router>
-					<div className="flex flex-col justify-between h-screen">
+					<div className="flex flex-col justify-between min-h-screen">
 						<div>
 							<Header></Header>
 							<Switch>

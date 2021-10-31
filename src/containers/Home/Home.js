@@ -6,6 +6,7 @@ import { BsChevronCompactDown } from 'react-icons/bs';
 import Cards from './Cards/Cards';
 import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 import TourPack from './TourPack/TourPack';
+import WhyUs from './WhyUs/WhyUs';
 
 const Home = () => {
 	return (
@@ -35,18 +36,18 @@ const Home = () => {
 								<div>
 									<HashLink
 										to="home#tour"
-										className="mt-3 bg-white text-brand-2 hover:text-brand-3 hover:bg-brand-7 px-6 py-1 font-semibold flex flex-col text-lg items-center"
+										className="mt-3 bg-white text-brand-2 hover:text-white hover:bg-brand-2 px-6 border-2 border-white py-1 font-semibold flex flex-col text-lg items-center transition duration-500 ease-in-out transform hover:shadow-xl"
 									>
 										Tour to Sylhet
 									</HashLink>
 									<div className="text-center flex justify-center">
-										<BsChevronCompactDown className="text-3xl font-extrabold mb-10 -mt-1"></BsChevronCompactDown>
+										<BsChevronCompactDown className="text-3xl font-extrabold mb-12 "></BsChevronCompactDown>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div className="bg-brand-7 pb-40">
+					<div className="bg-brand-7">
 						<div className="flex flex-col items-center">
 							<h1
 								className="text-white bg-brand-3 mt-20 w-60 text-center py-2 text-xl"
@@ -57,8 +58,11 @@ const Home = () => {
 						</div>
 						<div className="bg-brand-3 h-1  mb-16"></div>
 
-						<div className="mx-auto">
+						<div className="mx-auto pb-10">
 							<Cards></Cards>
+						</div>
+						<div className="bg-white">
+							<WhyUs></WhyUs>
 						</div>
 					</div>
 				</Route>

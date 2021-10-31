@@ -6,7 +6,7 @@ import { GiMoneyStack } from 'react-icons/gi';
 import usePackage from '../../hooks/usePackage';
 import { Link } from 'react-router-dom';
 
-const TourCard = ({ enrollment}) => {
+const TourCard = ({ enrollment }) => {
 	const { _id, name, email, number, img, packageId } = enrollment;
 	const [pack] = usePackage(packageId);
 	const handleDelete = () => {
@@ -24,7 +24,7 @@ const TourCard = ({ enrollment}) => {
 	return (
 		<div>
 			<div className="container mx-auto pt-5">
-				<div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto">
+				<div className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto transition duration-500 ease-in-out transform hover:shadow-2xl">
 					<div className="flex flex-col  md:flex-row justify-between items-center w-full lg:px-10">
 						<div className="flex gap-2 flex-col md:flex-row  items-center px-4 py-6">
 							<img
@@ -62,7 +62,6 @@ const TourCard = ({ enrollment}) => {
 							</div>
 						</div>
 						<div className="my-5 flex justify-center ml-3">
-
 							<Link to={`/update/${_id}`}>
 								<button className=" border-brand-2  hover:bg-brand-2 border-2 rounded-lg mr-5 p-1 text-brand-2 hover:text-white">
 									<MdOutlineModeEditOutline className=" text-2xl" />

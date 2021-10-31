@@ -8,7 +8,7 @@ const Card = ({ pack }) => {
 	const { _id, img, days, price, title, location } = pack;
 	return (
 		<div>
-			<div className="bg-white w-96  h-auto  shadow-md flex flex-col gap-2 m-5 lg:m-10">
+			<div className="bg-white w-96  h-auto  shadow-md flex flex-col gap-2 m-5 lg:m-10 transition duration-500 ease-in-out transform hover:shadow-xl">
 				<div
 					style={{
 						background: `url(${img})`,
@@ -38,7 +38,7 @@ const Card = ({ pack }) => {
 				</div>
 				<Link to={`/home/${_id}`}>
 					<div className="flex justify-center">
-						<button className="bg-brand-2 hover:bg-brand- w-full text-white py-2 flex justify-center items-center">
+						<button className="bg-brand-2 transition duration-500 hover:bg-brand-3 hover:bg-brand- w-full text-white py-2 flex justify-center items-center">
 							<span>Enroll Now</span>
 						</button>
 					</div>

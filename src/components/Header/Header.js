@@ -46,6 +46,16 @@ const Header = () => {
 										About us
 									</NavLink>
 									<NavLink
+										to="/addpackage"
+										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
+										activeStyle={{
+											backgroundColor: '#7DC242',
+											color: 'white',
+										}}
+									>
+										Add Package
+									</NavLink>
+									<NavLink
 										to="/alltours"
 										className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
 										activeStyle={{
@@ -68,16 +78,7 @@ const Header = () => {
 											>
 												My Tours
 											</NavLink>
-											<NavLink
-												to="/addpackage"
-												className="font-semibold text-bluegray-400 hover:text-bluegray-600 link link-underline link-underline-red px-3 lg:px-6 py-1"
-												activeStyle={{
-													backgroundColor: '#7DC242',
-													color: 'white',
-												}}
-											>
-												Add Package
-											</NavLink>
+
 											<div className="flex flex-col justify-between h-20">
 												<button
 													onClick={logOut}
@@ -215,14 +216,15 @@ const Header = () => {
 								>
 									All Tours
 								</NavLink>
-								<NavLink
-									to="/mytours"
-									className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
-								>
-									My Tours
-								</NavLink>
+
 								{user.displayName ? (
 									<div className="flex items-center flex-col">
+										<NavLink
+											to="/mytours"
+											className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"
+										>
+											My Tours
+										</NavLink>
 										<button
 											onClick={logOut}
 											className="font-semibold text-white hover:bg-white hover:text-brand-2 block px-3 py-2  text-base w-full"

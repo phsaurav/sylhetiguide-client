@@ -11,7 +11,7 @@ const AllTourCard = ({ enrollment }) => {
 	const [pack] = usePackage(packageId);
 	const handleDelete = () => {
 		if (window.confirm('Are you Sure?')) {
-			fetch(`http://localhost:5000/enrollments/${_id}`, {
+			fetch(`https://sylhetiguide.herokuapp.com/enrollments/${_id}`, {
 				method: 'DELETE',
 			})
 				.then((res) => res.text()) // or res.json()

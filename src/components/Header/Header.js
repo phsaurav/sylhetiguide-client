@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo_title.png';
 import useAuth from '../../hooks/useAuth';
 import { Transition } from '@headlessui/react';
@@ -86,29 +86,31 @@ const Header = () => {
 												>
 													Log Out
 												</button>
-												<div className="flex w-36 items-center justify-center h-8 mr-1">
-													<div className="w-6 h-6 m-1 text-xl border-bra">
-														{user.photoURL ? (
-															<img
-																className="rounded-full"
-																src={
-																	user.photoURL
-																}
-																alt=""
-															/>
-														) : (
-															<FaUserCircle className="text-brand-2 text-xl h-6 w-6" />
-														)}
+												<Link to="/mytours">
+													<div className="flex w-36 items-center justify-center h-8 mr-1">
+														<div className="w-6 h-6 m-1 text-xl border-bra">
+															{user.photoURL ? (
+																<img
+																	className="rounded-full"
+																	src={
+																		user.photoURL
+																	}
+																	alt=""
+																/>
+															) : (
+																<FaUserCircle className="text-brand-2 text-xl h-6 w-6" />
+															)}
+														</div>
+														<p className="font-semibold text-brand-2  py-1 transition duration-300 ease-in-out text-left pl-1">
+															{user.displayName
+																.length > 10
+																? user.displayName.split(
+																		' '
+																  )[0]
+																: user.displayName}
+														</p>
 													</div>
-													<p className="font-semibold text-brand-2  py-1 transition duration-300 ease-in-out text-left pl-1">
-														{user.displayName
-															.length > 10
-															? user.displayName.split(
-																	' '
-															  )[0]
-															: user.displayName}
-													</p>
-												</div>
+												</Link>
 											</div>
 										</div>
 									) : (
